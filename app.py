@@ -34,3 +34,7 @@ def predict():
 
         return jsonify({'error': str(e), 'trace': traceback.format_exc()})
     
+if __name__ == '__main__':
+     clf = joblib.load(model_file_name)
+     model_columns = joblib.load(model_columns_file_name)
+     app.run(port=8081)
